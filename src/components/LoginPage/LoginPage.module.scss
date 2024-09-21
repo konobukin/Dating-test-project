@@ -1,0 +1,113 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 100vh;
+  width: 100vw;
+
+  @media (max-width: 1250px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.imageContainer {
+  flex: 1;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  margin-left: 10%;
+
+  @media (max-width: 1250px) {
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+
+    @media (max-width: 1250px) {
+      width: 290px;
+    }
+  }
+}
+
+.textContainer {
+  flex: 1;
+  max-width: 483px; 
+  margin-left: 50px;
+  margin-right: 10%;
+  text-align: left;
+
+  @media (max-width: 1250px) {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 290px; 
+  }
+
+  h2 {
+    font-size: 77px;
+    line-height: 84.72px;
+    background: linear-gradient(90deg, rgba(229, 23, 38, 1), rgba(212, 32, 140, 1));
+    background-clip: text;
+    margin-bottom: 20px;
+    font-weight: 800;
+    max-width: 476px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  ol {
+    list-style: none;
+    padding-left: 0;
+    counter-reset: li;
+
+    li {
+      font-size: 38px;
+      line-height: 75.31px;
+      font-weight: 600px;
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      height: 45px;
+
+      &:before {
+        content: counter(li) ".";
+        counter-increment: li;
+        font-size: 55px;
+        line-height: 74.9px;
+        font-weight: bold;
+        background: linear-gradient(90deg, rgba(229, 23, 38, 1), rgba(212, 32, 140, 1));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-right: 10px;
+      }
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (max-width: 1250px) {
+    margin-left: 0;
+    h2 {
+      font-size: 35px;
+      line-height: 38.51px;
+    }
+
+    ol li {
+      font-size: 18px;
+      line-height: 37.3px;
+
+      &:before {
+        font-size: 33px;
+      }
+    }
+  }
+}

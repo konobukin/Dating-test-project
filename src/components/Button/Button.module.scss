@@ -1,0 +1,20 @@
+.button {
+    background: linear-gradient(90deg, rgba(229, 23, 38, 1), rgba(212, 32, 140, 1));
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    width: 387px;
+
+    @media (max-width: 1250px) {
+        width: 251px;
+      }
+  
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+  
