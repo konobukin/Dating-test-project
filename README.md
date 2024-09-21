@@ -1,46 +1,116 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Dating App Registration Form
 
-## Available Scripts
+## Project Description
+This project is a registration form for a dating website. It allows users to register and log in using email and password. After a successful registration, the user is redirected to the authorized area with an authentication token.
 
-In the project directory, you can run:
+## Features
+- Registration form with email and password fields.
+- Form validation (email format and password length).
+- Integration with backend API for login and registration.
+- Redirection to the authorized user area with an authentication token.
+- Error handling and validation feedback.
 
-### `npm start`
+## Tech Stack
+- **React** (TypeScript)
+- **RTK Query** for managing API requests
+- **SCSS** for styling
+- **React Hooks** for managing state
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Prerequisites
+To run this project locally, ensure you have the following installed:
+- **Node.js** (v14 or higher)
+- **npm** (Node package manager) or **yarn**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## How to Run the Project
 
-### `npm test`
+### Step 1: Clone the Repository
+Clone this repository to your local machine:
+```bash
+git clone https://github.com/your-username/your-repository.git
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Step 2: Navigate to the Project Directory
+```bash
+cd your-repository
+```
 
-### `npm run build`
+### Step 3: Install Dependencies
+Install the required dependencies using npm:
+```bash
+npm install
+```
+Or if you're using yarn:
+```bash
+yarn install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Step 4: Start the Development Server
+To run the project locally in development mode, use the following command:
+```bash
+npm start
+```
+Or with yarn:
+```bash
+yarn start
+```
+The app will be available at `http://localhost:3000`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Step 5: Running API Server
+The app interacts with a backend API. For testing, the required API endpoints should be available:
+- **GET** request for login: `https://api.dating.com/identity`
+- **PUT** request for registration: `https://api.dating.com/identity`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+If you do not have access to the real API, you can create a mock API server locally using tools like **json-server** or **express.js** to simulate the API behavior.
 
-### `npm run eject`
+### Step 6: Testing the Registration
+To test the registration functionality:
+- Enter a valid email in the email field (e.g., `my@example.com`).
+- Enter a password that is at least 8 characters long.
+- After successful registration or login, you will be redirected to an authorized user page with the token displayed in the URL.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Validation and Error Handling
+- If the email is invalid or the password is too short, the form will display validation errors.
+- If there is an error during the registration or login process, an error message will appear on the form.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## How to Build the Project for Production
+To create an optimized production build, use the following command:
+```bash
+npm run build
+```
+Or with yarn:
+```bash
+yarn build
+```
+This will generate a `build` directory with all the necessary static files that you can deploy to a web server.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Deployment
+Once you have built the project, you can deploy the `build` folder to any static hosting service like:
+- **Netlify**
+- **Vercel**
+- **GitHub Pages**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+For example, to deploy to **GitHub Pages**:
+1. Install the `gh-pages` package:
+   ```bash
+   npm install --save gh-pages
+   ```
+2. Add the following to your `package.json` file:
+   ```json
+   "homepage": "http://your-username.github.io/your-repository",
+   "scripts": {
+     "predeploy": "npm run build",
+     "deploy": "gh-pages -d build"
+   }
+   ```
+3. Deploy the project:
+   ```bash
+   npm run deploy
+   ```
 
-## Learn More
+## Notes
+- Ensure that the API endpoints for authentication and registration are working correctly.
+- In case of CORS issues with the API, make sure the server allows requests from `http://localhost:3000`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Author
+- **Your Name** - [Your GitHub Profile](https://github.com/your-username)
